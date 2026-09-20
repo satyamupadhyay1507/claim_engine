@@ -7,8 +7,11 @@ import streamlit as st
 root_dir = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(root_dir))
 
+import os
+import requests
 from src.config import settings
 from src.models.claim import ClaimCase
+from src.models.decision import AdjudicationResult
 from src.agents.workflow import ClaimAdjudicationPipeline
 from src.rag.retriever import HybridRetriever
 
@@ -144,6 +147,23 @@ with st.sidebar:
                 st.error(f"Error parsing file: {e}")
 
     st.divider()
+    with st.expander("⚙️ Backend API Configuration"):
+        backend_url = st.text_input(
+            "Remote Backend URL (Optional)",
+            value=os.getenv("BACKEND_API_URL", ""),
+            placeholder="e.g. https://<app>.hf.space",
+            help="If provided, adjudication requests will be sent to this deployed FastAPI backend. Leave blank to run in-memory."
+        )
+        if backend_url.strip():
+            try:
+                h_res = requests.get(f"{backend_url.strip().rstrip('/')}/health", timeout=3)
+                if h_res.status_code == 200:
+                    st.caption("🟢 Backend API Connected")
+                else:
+                    st.caption(f"🟡 Backend returned status {h_res.status_code}")
+            except Exception:
+                st.caption("🔴 Cannot reach Backend API")
+
     run_button = st.button("🚀 Run Adjudication", type="primary", use_container_width=True)
 
 # Main content
@@ -159,7 +179,15 @@ if selected_case_data:
             with st.spinner("Executing Multi-Agent Adjudication Workflow..."):
                 try:
                     case_obj = ClaimCase(**selected_case_data)
-                    result = pipeline.run(case_obj)
+                    if backend_url and backend_url.strip():
+                        api_endpoint = f"{backend_url.strip().rstrip('/')}/analyze"
+                        resp = requests.post(api_endpoint, json=case_obj.model_dump(), timeout=60)
+                        if resp.status_code != 200:
+                            st.error(f"Backend API Error ({resp.status_code}): {resp.text}")
+                            st.stop()
+                        result = AdjudicationResult(**resp.json())
+                    else:
+                        result = pipeline.run(case_obj)
                     st.session_state.current_result = result
                 except Exception as e:
                     st.error(f"Execution Error: {str(e)}")

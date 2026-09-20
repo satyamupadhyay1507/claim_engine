@@ -11,6 +11,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 8501 8000
+# Expose ports: 7860 (Hugging Face Spaces default), 8000 (FastAPI), 8501 (Streamlit)
+EXPOSE 7860 8000 8501
 
-CMD ["streamlit", "run", "src/ui/app.py", "--server.port", "8501", "--server.address", "0.0.0.0", "--server.headless", "true"]
+ENV PORT=7860
+
+CMD ["sh", "-c", "uvicorn src.api.app:app --host 0.0.0.0 --port ${PORT}"]
