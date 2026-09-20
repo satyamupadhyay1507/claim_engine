@@ -1,0 +1,266 @@
+{
+  "metrics": {
+    "total_cases": 17,
+    "decision_accuracy_pct": 100.0,
+    "abstention_fidelity_pct": 100.0,
+    "citation_correctness_pct": 100.0,
+    "average_latency_ms": 1.24
+  },
+  "detailed_results": [
+    {
+      "case_id": "PUB-001",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "decision_match": true,
+      "confidence": 0.9,
+      "latency_ms": 1.48,
+      "citations_count": 1,
+      "validation_status": "PASS",
+      "applicable_limits": [
+        "Room rent capped at INR 5,000/day (1% of Sum Insured). Excess of INR 10,000 deducted.",
+        "Proportionate deduction of INR 40,000 applied to doctor fees and diagnostics due to room rent over-limit.",
+        "Ambulance charges capped at INR 1,000 per policy schedule."
+      ],
+      "missing_evidence": [],
+      "description": "Acute appendicitis; room rent exceeds 1% SI/day, triggers proportionate deduction"
+    },
+    {
+      "case_id": "PUB-002",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.3,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [],
+      "description": "Viral fever on day 20 with 0 continuous months; excluded under 30-day initial waiting period"
+    },
+    {
+      "case_id": "PUB-003",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.43,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [],
+      "description": "Pre-existing thyroid condition at 27 months continuous coverage; requires 48 months"
+    },
+    {
+      "case_id": "PUB-004",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "decision_match": true,
+      "confidence": 0.9,
+      "latency_ms": 0.88,
+      "citations_count": 1,
+      "validation_status": "PASS",
+      "applicable_limits": [
+        "Domiciliary treatment sub-limit of 20% Sum Insured applied (capped at INR 100,000)."
+      ],
+      "missing_evidence": [],
+      "description": "Domiciliary treatment meeting room unavailability condition; capped at 20% SI"
+    },
+    {
+      "case_id": "PUB-005",
+      "expected_decision": "ADMISSIBLE",
+      "actual_decision": "ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.46,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [
+        "Hospital discharge summary"
+      ],
+      "description": "Cataract day care procedure with 29 months coverage; eligible under technological advancement"
+    },
+    {
+      "case_id": "PUB-006",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "decision_match": true,
+      "confidence": 0.85,
+      "latency_ms": 1.25,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [
+        "Treating doctor confirmation of medical necessity",
+        "Itemized hospital bill and breakdown"
+      ],
+      "description": "Acute infection; unverified hospital registration and unconfirmed medical necessity"
+    },
+    {
+      "case_id": "PUB-007",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "decision_match": true,
+      "confidence": 0.9,
+      "latency_ms": 1.15,
+      "citations_count": 1,
+      "validation_status": "PASS",
+      "applicable_limits": [
+        "Room rent capped at INR 10,000/day (1% of Sum Insured). Excess of INR 40,000 deducted.",
+        "Proportionate deduction of INR 400,000 applied to doctor fees and diagnostics due to room rent over-limit.",
+        "Ambulance charges capped at INR 1,000 per policy schedule."
+      ],
+      "missing_evidence": [],
+      "description": "Cancer treatment; room rent overshoot triggers proportionate deduction and ambulance cap"
+    },
+    {
+      "case_id": "PUB-008",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.17,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [],
+      "description": "Cosmetic surgery; strictly excluded under policy general exclusions"
+    },
+    {
+      "case_id": "PUB-009",
+      "expected_decision": "ADMISSIBLE",
+      "actual_decision": "ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.15,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [],
+      "description": "Pre/post hospitalization expenses within 30-day pre and 60-day post windows"
+    },
+    {
+      "case_id": "PUB-010",
+      "expected_decision": "ADMISSIBLE",
+      "actual_decision": "ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.52,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [
+        "Hospital discharge summary"
+      ],
+      "description": "Cataract surgery with portability credit from prior insurer; waiting period reduction applies"
+    },
+    {
+      "case_id": "PUB-011",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "decision_match": true,
+      "confidence": 0.85,
+      "latency_ms": 0.92,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [
+        "Treating facility registration certificate or proof of hospital status",
+        "Evidence that facility maintains minimum required beds and qualified nursing staff",
+        "Treating doctor confirmation of medical necessity",
+        "Hospital discharge summary"
+      ],
+      "description": "Facility does not document compliance with statutory Hospital definition"
+    },
+    {
+      "case_id": "PUB-012",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.27,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [],
+      "description": "Experimental therapy; strictly excluded under experimental/unproven treatment exclusion"
+    },
+    {
+      "case_id": "CAND-001",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.57,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [],
+      "description": "Total Knee Replacement at 8 months; specific 1-year joint replacement waiting period applies"
+    },
+    {
+      "case_id": "CAND-002",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "decision_match": true,
+      "confidence": 0.85,
+      "latency_ms": 1.29,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [
+        "Treating facility registration certificate or proof of hospital status",
+        "Evidence that facility maintains minimum required beds and qualified nursing staff",
+        "Treating doctor confirmation of medical necessity"
+      ],
+      "description": "Laparoscopic cholecystectomy in nursing home with unverified hospital statutory criteria"
+    },
+    {
+      "case_id": "CAND-003",
+      "expected_decision": "ADMISSIBLE",
+      "actual_decision": "ADMISSIBLE",
+      "decision_match": true,
+      "confidence": 0.95,
+      "latency_ms": 1.46,
+      "citations_count": 1,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [],
+      "description": "Accidental fracture on day 12; trauma is explicit exception to 30-day initial waiting period"
+    },
+    {
+      "case_id": "CAND-004",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "decision_match": true,
+      "confidence": 0.85,
+      "latency_ms": 0.95,
+      "citations_count": 2,
+      "validation_status": "PASS",
+      "applicable_limits": [],
+      "missing_evidence": [
+        "Treating facility registration certificate or proof of hospital status",
+        "Evidence that facility maintains minimum required beds and qualified nursing staff",
+        "Treating doctor confirmation of medical necessity",
+        "Hospital discharge summary",
+        "Itemized hospital bill and breakdown"
+      ],
+      "description": "Observation claim with missing discharge summary and unverified clinic criteria"
+    },
+    {
+      "case_id": "CAND-005",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "decision_match": true,
+      "confidence": 0.9,
+      "latency_ms": 0.76,
+      "citations_count": 1,
+      "validation_status": "PASS",
+      "applicable_limits": [
+        "Domiciliary treatment sub-limit of 20% Sum Insured applied (capped at INR 100,000)."
+      ],
+      "missing_evidence": [],
+      "description": "Domiciliary pneumonia treatment for elderly patient; capped at 20% sum insured sub-limit"
+    }
+  ]
+}

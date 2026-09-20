@@ -1,0 +1,205 @@
+[
+  {
+    "case_id": "CAND-001",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2025-01-01",
+    "claim_date": "2026-05-15",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 8,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 62
+    },
+    "hospital": {
+      "name": "Orthopaedic Specialty Hospital",
+      "network_provider": true
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 120,
+      "diagnosis": "Severe osteoarthritis with joint degeneration",
+      "procedure": "Total Knee Replacement",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 25000,
+      "doctor_fees": 80000,
+      "medicines_diagnostics": 150000,
+      "pre_hospitalization": 5000,
+      "post_hospitalization": 10000,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "discharge_summary",
+      "itemized_bill",
+      "xray_reports"
+    ],
+    "task": "Determine whether joint replacement surgery is admissible considering the policy's specific disease waiting period schedule."
+  },
+  {
+    "case_id": "CAND-002",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-06-20",
+    "sum_insured_inr": 400000,
+    "continuous_coverage_months": 29,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 43
+    },
+    "hospital": {
+      "name": "Community Health Nursing Home",
+      "network_provider": false
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 48,
+      "diagnosis": "Cholelithiasis with acute cholecystitis",
+      "procedure": "Laparoscopic Cholecystectomy",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 12000,
+      "doctor_fees": 35000,
+      "medicines_diagnostics": 45000,
+      "pre_hospitalization": 3000,
+      "post_hospitalization": 4000,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "discharge_summary",
+      "itemized_bill"
+    ],
+    "evidence_context": {
+      "hospital_registered": null,
+      "hospital_minimum_criteria_documented": false,
+      "medical_necessity_confirmed": null
+    },
+    "task": "Assess claim admissibility when treating nursing home lacks statutory registration proof and minimum bed criteria documentation under policy definitions."
+  },
+  {
+    "case_id": "CAND-003",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2026-01-01",
+    "claim_date": "2026-01-12",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 0,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 27
+    },
+    "hospital": {
+      "name": "Apex Trauma Center",
+      "network_provider": true
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 72,
+      "diagnosis": "Accidental road traffic trauma with radius fracture",
+      "procedure": "Open reduction and internal fixation (ORIF)",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 15000,
+      "doctor_fees": 30000,
+      "medicines_diagnostics": 55000,
+      "pre_hospitalization": 2000,
+      "post_hospitalization": 3000,
+      "ambulance": 1000
+    },
+    "documents": [
+      "claim_form",
+      "discharge_summary",
+      "itemized_bill",
+      "police_fir_or_medico_legal_certificate"
+    ],
+    "task": "Determine whether accidental injury claims are exempt from the standard 30-day initial waiting period."
+  },
+  {
+    "case_id": "CAND-004",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-07-18",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 30,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 50
+    },
+    "hospital": {
+      "name": "Suburban Poly Clinic",
+      "network_provider": false
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 48,
+      "diagnosis": "Unspecified chronic abdominal pain",
+      "procedure": "Diagnostic evaluation and observation",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 16000,
+      "doctor_fees": 15000,
+      "medicines_diagnostics": 30000,
+      "pre_hospitalization": 0,
+      "post_hospitalization": 0,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form"
+    ],
+    "evidence_context": {
+      "hospital_registered": null,
+      "hospital_minimum_criteria_documented": false,
+      "medical_necessity_confirmed": null
+    },
+    "task": "Evaluate claim where discharge summary is missing and treating clinic lacks documented compliance with hospital criteria."
+  },
+  {
+    "case_id": "CAND-005",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-08-05",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 31,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 71
+    },
+    "hospital": {
+      "name": "City Home Healthcare",
+      "network_provider": false
+    },
+    "treatment": {
+      "type": "domiciliary",
+      "admission_hours": 0,
+      "diagnosis": "Severe bronchopneumonia with respiratory distress",
+      "procedure": "Domiciliary oxygen and medical management",
+      "pre_existing": false,
+      "hospital_room_unavailable": true,
+      "patient_cannot_be_moved": true,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 0,
+      "doctor_fees": 35000,
+      "medicines_diagnostics": 115000,
+      "pre_hospitalization": 0,
+      "post_hospitalization": 0,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "doctor_certificate",
+      "itemized_bill",
+      "medical_records"
+    ],
+    "task": "Determine admissibility of domiciliary treatment for elderly patient and apply the 20% sum insured sub-limit."
+  }
+]

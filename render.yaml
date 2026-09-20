@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: claim-engine-ui
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run src/ui/app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: APP_ENV
+        value: production
+
+  - type: web
+    name: claim-engine-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn src.api.app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.8
+      - key: APP_ENV
+        value: production
