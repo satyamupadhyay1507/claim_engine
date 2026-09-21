@@ -6,6 +6,21 @@ The system couples **hierarchical policy ingestion and hybrid retrieval (BM25 + 
 
 ---
 
+## 🌐 Live Deployments & Documented Endpoints
+
+| Resource | Target / URL | Description |
+| :--- | :--- | :--- |
+| **Live Frontend (Streamlit)** | `https://claim-engine.streamlit.app` | Interactive Streamlit adjudication dashboard (hosted on Streamlit Community Cloud) |
+| **Live API Backend (Render)** | `https://claim-engine-api.onrender.com` | FastAPI production service (hosted on Render) |
+| **Interactive OpenAPI Docs** | `https://claim-engine-api.onrender.com/docs` | Swagger UI test console with full schema documentation |
+| **Alternative Docs (ReDoc)** | `https://claim-engine-api.onrender.com/redoc` | Clean spec documentation |
+| **Health Check Probe** | `GET https://claim-engine-api.onrender.com/health` | Service health status & loaded policy chunks count |
+| **Adjudicate Claim API** | `POST https://claim-engine-api.onrender.com/analyze` | Core multi-agent RAG adjudication engine endpoint |
+| **Public Test Cases API** | `GET https://claim-engine-api.onrender.com/cases` | Preloaded sample benchmark cases |
+| **Source Repository** | `https://github.com/satyamupadhyay1507/claim_engine` | Git repository with complete pipeline, tests, and eval report |
+
+---
+
 ## System Architecture
 
 ```
