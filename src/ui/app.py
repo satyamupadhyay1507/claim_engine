@@ -158,7 +158,7 @@ with st.sidebar:
         backend_url = st.text_input(
             "Remote Backend URL (Optional)",
             value=default_backend,
-            placeholder="e.g. https://<app>.koyeb.app",
+            placeholder="e.g. https://claim-engine-api.onrender.com",
             help="If provided, adjudication requests will be sent to this deployed FastAPI backend. Leave blank to run in-memory."
         )
         if backend_url.strip():
