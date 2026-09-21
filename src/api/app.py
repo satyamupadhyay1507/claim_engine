@@ -86,11 +86,12 @@ def analyze_claim(case: ClaimCase) -> AdjudicationResult:
 @app.get("/cases", response_model=List[Dict[str, Any]])
 def list_sample_cases() -> List[Dict[str, Any]]:
     """Helper endpoint to list public sample cases for demonstration and testing."""
-    local_path = Path(__file__).resolve().parent.parent / "data" / "candidate_data" / "public_test_cases.json"
+    root_path = Path(__file__).resolve().parent.parent.parent
+    local_path = root_path / "data" / "candidate_data" / "public_test_cases.json"
     if local_path.exists():
         with open(local_path, "r", encoding="utf-8") as f:
             return json.load(f)
-    parent_path = Path(__file__).resolve().parent.parent.parent.parent / "candidate_data" / "public_test_cases.json"
+    parent_path = root_path.parent / "candidate_data" / "public_test_cases.json"
     if parent_path.exists():
         with open(parent_path, "r", encoding="utf-8") as f:
             return json.load(f)
