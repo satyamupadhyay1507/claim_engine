@@ -148,10 +148,17 @@ with st.sidebar:
 
     st.divider()
     with st.expander("⚙️ Backend API Configuration"):
+        default_backend = os.getenv("BACKEND_API_URL", "")
+        try:
+            if hasattr(st, "secrets") and "BACKEND_API_URL" in st.secrets:
+                default_backend = str(st.secrets["BACKEND_API_URL"])
+        except Exception:
+            pass
+
         backend_url = st.text_input(
             "Remote Backend URL (Optional)",
-            value=os.getenv("BACKEND_API_URL", ""),
-            placeholder="e.g. https://<app>.hf.space",
+            value=default_backend,
+            placeholder="e.g. https://<app>.koyeb.app",
             help="If provided, adjudication requests will be sent to this deployed FastAPI backend. Leave blank to run in-memory."
         )
         if backend_url.strip():
